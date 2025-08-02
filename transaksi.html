@@ -2,47 +2,68 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Pesanan</title>
+    <title>Tentang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+        nav, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-
     <nav>
-                <a href="index.html"><font color="black">Beranda</font></a> |
-                <a href="produk.html"><font color="black">Produk</font></a> | 
-                <a href="transaksi.html"><font color="black">Transaksi</font></a> | 
-                <a href="tentang.html"><font color="black">Tentang</font></a> 
+        <a href="index.html">Beranda</a> |
+        <a href="produk.html">Produk</a> |
+        <a href="transaksi.html">Transaksi</a> |
+        <a href="tentang.html">Tentang</a>
     </nav>
 
-     <header>
-        <h1>Formulir Pesanan</h1>
-    </header>
+    <h2>Tentang AdorArror</h2>
+    <p>
+        AdorArror adalah brand fashion minimalist dengan sentuhan modern dan elegan. Nama berasal dari "Adore" dan "Error", filosofi kami adalah menerima ketidaksempurnaan sebagai gaya unik.
+    </p>
+    <h2>Visi</h2>
+    <p>Menjadi brand fashion minimalist yang menginspirasi generasi modern.</p>
 
-    <main>
-        <form action="/submit" method="post">
-            <label for="nama">Nama:</label><br>
-            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required><br><br>
+    <h2>Misi</h2>
+    <ul>
+        <li>Minimalist Lifestyle</li>
+        <li>Timeless Elegance</li>
+        <li>Comfort and Versatility</li>
+    </ul>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required><br><br>
+    <h2>Hubungi Kami</h2>
+    <p>📞 +62 546-3778-124</p>
+    <p>📷 AdorArror</p>
+    <p>✉️ AdorArror@gmail.com</p>
 
-            <label for="alamat">Alamat:</label><br>
-            <textarea id="alamat" name="alamat" rows="4" placeholder="Masukkan alamat Anda" required></textarea><br><br>
-
-            <label for="produk">Produk yang Dipesan:</label><br>
-            <select id="produk" name="produk" required>
-                <option value="">-- Pilih Produk --</option>
-                <option value="produk1">Produk 1</option>
-                <option value="produk2">Produk 2</option>
-                <option value="produk3">Produk 3</option>
-            </select><br><br>
-
-            <label for="jumlah">Jumlah:</label><br>
-            <input type="number" id="jumlah" name="jumlah" min="1" placeholder="Masukkan jumlah" required><br><br>
-
-            <button type="submit">Kirim Pesanan</button>
-        </form>
-    </main>
+    <h2>Identitas</h2>
+    <table>
+        <tr>
+            <td><img src="adrian1.jpeg" width="150" style="border-radius: 50%;"></td>
+            <td>
+                <p>Nama     : Adrian Saverio Elyastra</p>
+                <p>Kelas    : IS-2</p>
+                <p>NIM      : 10524062</p>
+                <p>Email    : adrian.10524062@mahasiswa.unikom.ac.id</p>
+            </td>
+        </tr>
+    </table>
 
     <footer>
         <p>&copy; 2025 AdorArror</p>

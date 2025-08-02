@@ -5,68 +5,148 @@
     <title>Produk</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fdfdfd;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
             color: #333;
         }
-        nav, footer {
+
+        nav {
             background-color: #333;
             color: white;
+            padding: 15px 0;
             text-align: center;
-            padding: 10px;
         }
+
         nav a {
             color: white;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
+            font-weight: 500;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
-        img {
+
+        h2 {
+            margin-top: 30px;
+            color: #444;
+            font-size: 28px;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        .produk-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .produk-card {
+            background-color: white;
+            width: 280px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .produk-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .produk-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .produk-card strong {
+            display: block;
+            margin: 8px 0;
+        }
+
+        .produk-card s {
+            color: #888;
+        }
+
+        .produk-card a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #333;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .produk-card a:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+
+        .promo-text {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #c62828;
         }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="index.html">Beranda</a> |
-        <a href="produk.html">Produk</a> |
-        <a href="transaksi.html">Transaksi</a> |
+        <a href="index.html">Beranda</a> 
+        <a href="produk.html">Produk</a> 
+        <a href="transaksi.html">Transaksi</a> 
         <a href="tentang.html">Tentang</a>
     </nav>
 
     <h2 align="center">Daftar Produk</h2>
-    <p align="center"><strong>Diskon Spesial Minggu Ini!</strong></p>
+    <p class="promo-text">Diskon Spesial Minggu Ini!</p>
 
-    <table border="1" width="100%" cellpadding="10">
-        <tr>
-            <td align="center">
-                <p><strong>SALE!</strong></p>
-                <img src="https://www.hallojones.com/wp-content/uploads/2022/07/resize_VK-Javajones__4799-1024x1024.jpg" width="80%">
-                <p><strong>Baggy Jorts Pants Unisex</strong></p>
-                <p><s>Rp350.000</s><br><strong>Rp245.000</strong></p>
-                <p><a href="transaksi.html">Beli</a></p>
-            </td>
-            <td align="center">
-                <p><strong>SALE!</strong></p>
-                <img src="https://www.hallojones.com/wp-content/uploads/2023/06/resize_VK-Javajones_04400-1024x1024.jpg" width="80%">
-                <p><strong>Rugby Jaket</strong></p>
-                <p><s>Rp220.000</s><br><strong>Rp176.000</strong></p>
-                <p><a href="transaksi.html">Beli</a></p>
-            </td>
-            <td align="center">
-                <p><strong>SALE!</strong></p>
-                <img src="https://www.hallojones.com/wp-content/uploads/2023/07/resize_VK-Javajones_0098-1.jpg" width="80%">
-                <p><strong>Boxy Longsleeve Shirt</strong></p>
-                <p><s>Rp350.000</s><br><strong>Rp262.500</strong></p>
-                <p><a href="transaksi.html">Beli</a></p>
-            </td>
-        </tr>
-    </table>
+    <div class="produk-container">
+        <div class="produk-card">
+            <p><strong>SALE!</strong></p>
+            <img src="https://www.hallojones.com/wp-content/uploads/2022/07/resize_VK-Javajones__4799-1024x1024.jpg" alt="Baggy Jorts">
+            <strong>Baggy Jorts Pants Unisex</strong>
+            <p><s>Rp350.000</s><br><strong>Rp245.000</strong></p>
+            <a href="transaksi.html">Beli</a>
+        </div>
+
+        <div class="produk-card">
+            <p><strong>SALE!</strong></p>
+            <img src="https://www.hallojones.com/wp-content/uploads/2023/06/resize_VK-Javajones_04400-1024x1024.jpg" alt="Rugby Jaket">
+            <strong>Rugby Jaket</strong>
+            <p><s>Rp220.000</s><br><strong>Rp176.000</strong></p>
+            <a href="transaksi.html">Beli</a>
+        </div>
+
+        <div class="produk-card">
+            <p><strong>SALE!</strong></p>
+            <img src="https://www.hallojones.com/wp-content/uploads/2023/07/resize_VK-Javajones_0098-1.jpg" alt="Boxy Longsleeve">
+            <strong>Boxy Longsleeve Shirt</strong>
+            <p><s>Rp350.000</s><br><strong>Rp262.500</strong></p>
+            <a href="transaksi.html">Beli</a>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2025 AdorArror</p>
+        &copy; 2025 AdorArror
     </footer>
+
 </body>
 </html>

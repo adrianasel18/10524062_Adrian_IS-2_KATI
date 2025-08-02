@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Tentang</title>
-    <style>
-        body {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transaksi - AdorArror</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+     body {
             font-family: Arial, sans-serif;
             background-color: #fdfdfd;
             color: #333;
@@ -17,15 +25,78 @@
         }
         nav a {
             color: white;
-            margin: 0 10px;
             text-decoration: none;
+            margin: 0 10px;
         }
         nav a:hover {
             text-decoration: underline;
         }
-    </style>
+        td {
+            padding: 10px;
+        }
+        img {
+            border-radius: 10px;
+        }
+    h1 {
+      text-align: center;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, textarea, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #555;
+    }
+    #daftarProduk {
+      margin-top: 20px;
+      max-width: 500px;
+      margin-inline: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #fafafa;
+    }
+    #hasilPesanan {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .produk-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .hapus-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
+    <!-- Navigasi -->
     <nav>
         <a href="index.html">Beranda</a> |
         <a href="produk.html">Produk</a> |
@@ -33,39 +104,130 @@
         <a href="tentang.html">Tentang</a>
     </nav>
 
-    <h2>Tentang AdorArror</h2>
-    <p>
-        AdorArror adalah brand fashion minimalist dengan sentuhan modern dan elegan. Nama berasal dari "Adore" dan "Error", filosofi kami adalah menerima ketidaksempurnaan sebagai gaya unik.
-    </p>
-    <h2>Visi</h2>
-    <p>Menjadi brand fashion minimalist yang menginspirasi generasi modern.</p>
+  <h1>Form Transaksi</h1>
 
-    <h2>Misi</h2>
-    <ul>
-        <li>Minimalist Lifestyle</li>
-        <li>Timeless Elegance</li>
-        <li>Comfort and Versatility</li>
-    </ul>
+  <form id="formTransaksi">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" required />
 
-    <h2>Hubungi Kami</h2>
-    <p>📞 +62 546-3778-124</p>
-    <p>📷 AdorArror</p>
-    <p>✉️ AdorArror@gmail.com</p>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required />
 
-    <h2>Identitas</h2>
-    <table>
-        <tr>
-            <td><img src="adrian1.jpeg" width="150" style="border-radius: 50%;"></td>
-            <td>
-                <p>Nama     : Adrian Saverio Elyastra</p>
-                <p>Kelas    : IS-2</p>
-                <p>NIM      : 10524062</p>
-                <p>Email    : adrian.10524062@mahasiswa.unikom.ac.id</p>
-            </td>
-        </tr>
-    </table>
+    <label for="alamat">Alamat:</label>
+    <textarea id="alamat" rows="4" required></textarea>
 
-    <footer>
+    <label for="produk">Produk:</label>
+    <select id="produk">
+      <option value="">-- Pilih Produk --</option>
+      <option value="Baggy Jorts">Baggy Jorts - Rp245000</option>
+      <option value="Rugby Jaket">Rugby Jaket - Rp176000</option>
+      <option value="Boxy Longsleeve">Boxy Longsleeve - Rp262500</option>
+    </select>
+
+    <label for="jumlah">Jumlah:</label>
+    <input type="number" id="jumlah" min="1" value="1" />
+
+    <button type="button" onclick="tambahProduk()">Tambah Produk</button>
+    <button type="submit">Kirim Pesanan</button>
+  </form>
+
+  <div id="daftarProduk"></div>
+  <div id="hasilPesanan"></div>
+
+  <script>
+    const daftarProduk = [];
+    const daftarHarga = {
+      "Baggy Jorts": 245000,
+      "Rugby Jaket": 176000,
+      "Boxy Longsleeve": 262500
+    };
+
+    function tambahProduk() {
+      const produk = document.getElementById('produk').value;
+      const jumlah = parseInt(document.getElementById('jumlah').value);
+
+      if (!produk || jumlah < 1) {
+        alert("Pilih produk dan jumlah yang valid!");
+        return;
+      }
+
+      daftarProduk.push({ produk, jumlah });
+      renderDaftar();
+
+      // Reset input
+      document.getElementById('produk').value = "";
+      document.getElementById('jumlah').value = 1;
+    }
+
+    function hapusProduk(index) {
+      daftarProduk.splice(index, 1);
+      renderDaftar();
+    }
+
+    function renderDaftar() {
+      const container = document.getElementById('daftarProduk');
+      if (daftarProduk.length === 0) {
+        container.innerHTML = "<p>Belum ada produk ditambahkan.</p>";
+        return;
+      }
+
+      let html = "<h3>Daftar Produk:</h3>";
+      daftarProduk.forEach((item, index) => {
+        html += `
+          <div class="produk-item">
+            <span>${item.produk} (${item.jumlah} pcs)</span>
+            <button class="hapus-btn" onclick="hapusProduk(${index})">❌ Hapus</button>
+          </div>`;
+      });
+      container.innerHTML = html;
+    }
+
+    document.getElementById('formTransaksi').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      if (daftarProduk.length === 0) {
+        alert("Silakan tambahkan minimal satu produk.");
+        return;
+      }
+
+      const nama = document.getElementById('nama').value;
+      const email = document.getElementById('email').value;
+      const alamat = document.getElementById('alamat').value;
+
+      let total = 0;
+      let rincianHTML = "";
+      let rincianAlert = "";
+
+      daftarProduk.forEach(item => {
+        const harga = daftarHarga[item.produk] || 0;
+        const subtotal = harga * item.jumlah;
+        total += subtotal;
+
+        rincianHTML += `<p>${item.produk} (${item.jumlah} pcs): Rp${subtotal.toLocaleString('id-ID')}</p>`;
+        rincianAlert += `- ${item.produk} (${item.jumlah} pcs): Rp${subtotal.toLocaleString('id-ID')}\n`;
+      });
+
+      const formattedTotal = total.toLocaleString('id-ID');
+
+      // Pop-up hasil pesanan
+      let pesanPopup = `Pesanan untuk ${nama}\nEmail: ${email}\nAlamat: ${alamat}\n\n`;
+      pesanPopup += "Rincian Pesanan:\n" + rincianAlert;
+      pesanPopup += `\nTotal: Rp${formattedTotal}\n\nSilakan transfer ke:\nBNI 1234567890 a.n. AdorArror Store`;
+      alert(pesanPopup);
+
+      // Tampilkan juga di bawah form
+      document.getElementById('hasilPesanan').innerHTML = `
+        <h3>Rincian Pesanan:</h3>
+        <p><strong>Nama:</strong> ${nama}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Alamat:</strong> ${alamat}</p>
+        ${rincianHTML}
+        <p><strong>Total:</strong> Rp${formattedTotal}</p>
+        <p><strong>Rekening Pembayaran:</strong><br>BNI 1234567890 a.n. AdorArror Store</p>
+      `;
+    });
+  </script>
+     <footer>
         <p>&copy; 2025 AdorArror</p>
     </footer>
 </body>

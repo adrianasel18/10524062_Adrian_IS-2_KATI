@@ -1,50 +1,125 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Tentang</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fdfdfd;
-            color: #333;
-        }
-        nav, footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Tentang</title>
+  <style>
+    :root {
+      --primary: #333;
+      --bg: #fdfdfd;
+      --text: #333;
+      --accent: #555;
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding-bottom: 50px;
+    }
+
+    nav, footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #ddd;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      margin-top: 30px;
+      font-size: 22px;
+    }
+
+    p, li {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    table {
+      margin-top: 20px;
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    td {
+      padding: 15px;
+      vertical-align: top;
+    }
+
+    td img {
+      border-radius: 50%;
+      border: 3px solid #ddd;
+    }
+
+    footer {
+      position: relative;
+      bottom: 0;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Beranda</a> |
-        <a href="produk.html">Produk</a> |
-        <a href="transaksi.html">Transaksi</a> |
-        <a href="tentang.html">Tentang</a>
-    </nav>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="transaksi.html">Transaksi</a>
+    <a href="tentang.html">Tentang</a>
+  </nav>
 
+  <main>
     <h2>Tentang AdorArror</h2>
     <p>
-        AdorArror adalah brand fashion minimalist dengan sentuhan modern dan elegan. Nama berasal dari "Adore" dan "Error", filosofi kami adalah menerima ketidaksempurnaan sebagai gaya unik.
+      AdorArror adalah brand fashion minimalist dengan sentuhan modern dan elegan.
+      Nama berasal dari "Adore" dan "Error", filosofi kami adalah menerima ketidaksempurnaan sebagai gaya unik.
     </p>
+
     <h2>Visi</h2>
     <p>Menjadi brand fashion minimalist yang menginspirasi generasi modern.</p>
 
     <h2>Misi</h2>
     <ul>
-        <li>Minimalist Lifestyle</li>
-        <li>Timeless Elegance</li>
-        <li>Comfort and Versatility</li>
+      <li>Minimalist Lifestyle</li>
+      <li>Timeless Elegance</li>
+      <li>Comfort and Versatility</li>
     </ul>
 
     <h2>Hubungi Kami</h2>
@@ -54,19 +129,20 @@
 
     <h2>Identitas</h2>
     <table>
-        <tr>
-            <td><img src="adrian1.jpeg" width="150" style="border-radius: 50%;"></td>
-            <td>
-                <p>Nama     : Adrian Saverio Elyastra</p>
-                <p>Kelas    : IS-2</p>
-                <p>NIM      : 10524062</p>
-                <p>Email    : adrian.10524062@mahasiswa.unikom.ac.id</p>
-            </td>
-        </tr>
+      <tr>
+        <td><img src="adrian1.jpeg" width="150"></td>
+        <td>
+          <p><strong>Nama:</strong> Adrian Saverio Elyastra</p>
+          <p><strong>Kelas:</strong> IS-2</p>
+          <p><strong>NIM:</strong> 10524062</p>
+          <p><strong>Email:</strong> adrian.10524062@mahasiswa.unikom.ac.id</p>
+        </td>
+      </tr>
     </table>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 AdorArror</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 AdorArror</p>
+  </footer>
 </body>
 </html>
